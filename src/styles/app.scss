@@ -1,0 +1,423 @@
+/* 初始化样式
+------------------------------- */
+:root {
+  --wyk-color-white: #fff;
+  --wyk-color-black: #2b2f38;
+  --wyk-color-primary: #1966ff;
+  --wyk-border-color: #f1f2f3;
+  --wyk-zt-color: #165DFF;
+
+  --wyk-color-hover: #3c3c3c;
+  --wyk-color-hover-rgba: rgba(0, 0, 0, .05);
+
+  // 左侧菜单
+  --wyk-bg-menuMainColor: var(--wyk-color-white) !important;
+  --wyk-bg-menuActiveColor: var(--wyk-color-black) !important;
+  --wyk-bg-menuHoverColor: var(--wyk-color-black) !important;
+
+  --wyk-text-menuMainColor: var(--wyk-color-black) !important;
+  --wyk-text-menuActiveColor: var(--wyk-color-white) !important;
+  --wyk-text-menuHoverColor: var(--wyk-color-white) !important;
+
+  // 头部导航
+  --wyk-bg-headerBarColor: var(--wyk-color-white) !important;
+
+  // 头部右侧图标光标浮动
+  --wyk-color-user-hover: var(--wyk-color-hover-rgba) !important;
+
+  // 边框
+  --wyk-border-color-light: var(--wyk-border-color) !important;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  // padding 和 border 的值算在指定宽高内部的
+  box-sizing: border-box;
+  // 如 Dropdown 下拉菜单，隐藏点击会出现蓝色边框 */
+  outline: none !important;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Microsoft YaHei, 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 14px;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+.h100 {
+  height: 100% !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+
+/* flex 弹性布局
+------------------------------- */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  @extend .flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column-center {
+  @extend .flex-column;
+  align-items: center;
+  justify-content: center;
+}
+
+.space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.space-between-column {
+  @extend .flex-column;
+  justify-content: space-between;
+}
+
+
+/* 宽度全局样式
+------------------------------- */
+@for $i from 101 through 500 {
+  .w#{$i} {
+    width: #{$i}px !important;
+  }
+}
+
+/* 高度全局样式
+------------------------------- */
+@for $i from 101 through 500 {
+  .h#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+/* 外边距、内边距全局样式
+------------------------------- */
+@for $i from 1 through 35 {
+  .mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+
+  .mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+
+  .mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+
+  .ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+
+  .mg#{$i} {
+    margin: #{$i}px !important;
+  }
+
+  .pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+
+  .pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+
+  .pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+
+  .pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+
+  .pd#{$i} {
+    padding: #{$i}px !important;
+  }
+}
+
+
+/* 主布局样式
+------------------------------- */
+.layout-padding {
+  border: 1px solid var(--wyk-border-color-light);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-container {
+  width: 100%;
+  height: 100%;
+
+  // 菜单展开时
+  .layout-aside-menu-200 {
+    width: 200px !important;
+    transition: width .3s ease;
+  }
+
+  // 菜单收起时
+  .layout-aside-menu-60 {
+    width: 60px !important;
+    transition: width .3s ease;
+  }
+
+  // 左侧菜单
+  .layout-aside {
+    // background: var(--wyk-bg-menuMainColor);
+    height: inherit;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden !important;
+    border-right: 1px solid var(--wyk-border-color-light);
+
+    .layout-logo {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--el-color-primary);
+      font-size: 16px;
+      cursor: pointer;
+      .layout-logo-img {
+        width: 26px;
+      }
+
+      span {
+        display: inline-block;
+        white-space: nowrap;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  // 右侧头部
+  .layout-header {
+    padding: 0 !important;
+    height: auto !important;
+    height: 80px;
+    border-bottom: 1px solid #E6E6E6;
+
+    .layout-header-index {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      color: var(--el-text-color-regular) !important;
+      // background: var(--wyk-bg-headerBarColor);
+      border-bottom: 1px solid var(--wyk-border-color-light) !important;
+
+      .layout-header-breadcrumb {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        height: inherit;
+
+        .el-breadcrumb__inner a {
+          // 面包屑标题不加粗
+          font-weight: normal;
+        }
+
+        .layout-header-expand-icon {
+          font-size: 19px;
+          margin: 0 10px;
+          cursor: pointer;
+        }
+      }
+
+      .layout-header-user {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 15px;
+
+        .user-dropdown-link {
+          height: inherit;
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+        }
+
+        .layout-header-user-icon {
+          cursor: pointer;
+          padding: 0 10px;
+          height: 50px;
+          line-height: 50px;
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            background: var(--wyk-color-user-hover);
+          }
+        }
+      }
+    }
+  }
+
+  // 右侧主区域
+  .layout-main {
+    padding: 0 !important;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #FAFAFA;
+    flex-direction: column;
+
+    .layout-main-warp {
+      // padding: 20px !important;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* NavMenu 导航菜单
+------------------------------- */
+.el-menu {
+  border-right: none !important;
+
+  &.el-menu--collapse {
+    // 展开菜单时平滑
+    transition: width 0.3ms ease;
+  }
+}
+
+// .el-menu-item,
+// .el-sub-menu__title {
+//   color: var(--wyk-text-menuMainColor);
+// }
+
+// .el-menu-item.is-active {
+//   color: var(--wyk-text-menuActiveColor);
+//   background-color: var(--wyk-bg-menuActiveColor);
+// }
+
+// .el-menu-item:hover {
+//   color: var(--wyk-text-menuHoverColor);
+//   background-color: var(--wyk-bg-menuHoverColor);
+// }
+
+// 收缩后，鼠标放在多级菜单浮出窗口
+.el-menu--vertical {
+  background: var(--wyk-bg-menuMainColor);
+}
+
+// 收缩后，一级菜单浮出窗口 el-popper
+.el-popper.is-dark {
+  // color: var(--el-text-color-primary);
+  // background: var(--wyk-bg-menuMainColor);
+  // border: 1px solid var(--wyk-border-color);
+
+  .el-popper__arrow:before {
+    // 箭头
+    // background: var(--wyk-bg-menuMainColor) !important;
+    // border: 1px solid var(--wyk-border-color); //var(--next-border-color);
+  }
+}
+
+// 顶部菜单高度
+.el-menu-height {
+  height: 40px;
+  line-height: 40px;
+}
+// 菜单统一
+.menu-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+// 自定义下拉选择框样式
+.el-select__wrapper {
+  align-items: center;
+  background-color: #F2F3F5 !important;
+   border-radius: 0 !important;
+   box-shadow:none !important;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 6px;
+  line-height: 24px;
+  min-height: 32px;
+  padding: 4px 12px;
+  position: relative;
+  text-align: left;
+  transform: translateZ(0);
+  transition: var(--el-transition-duration);
+}
+// 自定义输入框
+.el-input__wrapper {
+  background-color: #F2F3F5;
+  border: none !important;
+  align-items: center;
+  background-image: none;
+   border-radius: 0 !important;
+ box-shadow: none !important;
+  cursor: text;
+  display: inline-flex;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 1px 11px;
+  transform: translateZ(0);
+  transition: var(--el-transition-box-shadow);
+}
+// 
+.el-input-group__append {
+border-left: 0;
+  box-shadow: none;
+  background: #F2F3F5;
+}
+
+// 复选框主题颜色
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: var(--wyk-zt-color);
+  border-color: var(--wyk-zt-color);
+}
+// 复选被选中文字颜色
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: var(--wyk-zt-color);
+}
+
+// 单选框主题颜色
+.el-radio__input.is-checked .el-radio__inner{
+  background-color: var(--wyk-zt-color);
+  border-color: var(--wyk-zt-color);
+}
+.el-radio__input.is-checked+.el-radio__label{
+  color: var(--wyk-zt-color);
+}

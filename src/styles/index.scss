@@ -1,0 +1,6 @@
+// ElementPlus 组件所有样式
+@use 'element-plus/dist/index.css';
+// 默认自定义样式
+@use './app.scss';
+// 路由跳转过度样式
+@use './transition.scss';

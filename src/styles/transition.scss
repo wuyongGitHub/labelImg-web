@@ -1,0 +1,32 @@
+/* 页面切换动画- */
+.fade-transform-enter-active,
+.fade-transform-leave-active {
+  transition: all .3s ease;
+}
+
+.fade-transform-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all .5s;
+}
+
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+// 因为 TransitionGroup 不支持 mode="out-in"，通过下面方式防止显示和隐藏效果同时出现。
+.breadcrumb-leave-active {
+  position: absolute;
+  z-index: -1;
+}
