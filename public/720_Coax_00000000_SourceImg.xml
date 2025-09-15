@@ -1,0 +1,26 @@
+<annotation>
+	<folder>10：吴用</folder>
+	<filename>720_Coax_00000000_SourceImg.jpg</filename>
+	<path>\\192.168.80.26\label_img（标注）\kunping_new\20250717需检测图片数据\10：吴用\720_Coax_00000000_SourceImg.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>16267</width>
+		<height>9015</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>1</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>8200</xmin>
+			<ymin>3571</ymin>
+			<xmax>9064</xmax>
+			<ymax>4462</ymax>
+		</bndbox>
+	</object>
+</annotation>
