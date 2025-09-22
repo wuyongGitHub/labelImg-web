@@ -1,5 +1,6 @@
 # canvas实现图片标注之Fabric.js从入门学习到实现labelImg矩形多边形标注工具
-AI时代，需要进行数据集的标注，多边形标注，矩形标注，复制粘贴，上一张下一张，主要技术栈vue3+fabric.js实现网页版本LabelImg标注功能。canvas实现图片标注之Fabric.js从入门学习到实现labelImg矩形多边形标注工具【下】
+图片标注网站，用fabric.js基于 canvas对图片进行标注，需要进行数据集的标注，多边形标注，矩形标注，复制粘贴，上一张下一张，主要技术栈vue3+fabric.js实现网页版本LabelImg标注功能。
+# canvas实现图片标注之Fabric.js从入门学习到实现labelImg矩形多边形标注工具【下】
 # 目录
 - 前言
 - 主体功能
