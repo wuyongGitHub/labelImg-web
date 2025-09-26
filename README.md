@@ -35,7 +35,7 @@
 - 优化五、创建多边形方式优化
 - 优化六、创建标注框的标签方式优化
 - 优化七、解决超大图放大后绘制卡顿问题
-- 优化八、四角控制点随意拖拽放大长和宽【摒弃等比放大缩小】
+- 优化八、四角控制点随意拖拽放大长和宽【摒弃等比放大缩小】可随意拖拽一点进行改变大小，高仿labelImg
 - END
 ## 前言
 经过[Fabric.js从入门学习到实现labelImg矩形多边形标注工具【上】](https://blog.csdn.net/qq_42696432/article/details/149866418?fromshare=blogdetail&sharetype=blogdetail&sharerId=149866418&sharerefer=PC&sharesource=qq_42696432&sharefrom=from_link) 的学习，开始进入前端标注工具的实战阶段，该工具可以进行源码二次开发或者根据自己的标注需求进行拓展，结尾有获取源码的方式~
